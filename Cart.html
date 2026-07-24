@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOPMART - Cart</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+.cart{
+    padding:40px;
+}
+
+.cart h1{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+#cart-items{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.cart-item{
+    display:flex;
+    align-items:center;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 3px 15px #ccc;
+}
+
+.cart-item img{
+    width:120px;
+    height:120px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.cart-details{
+    flex:1;
+    margin-left:25px;
+}
+
+.cart-details h3{
+    margin-bottom:10px;
+}
+
+.cart-details p{
+    margin:6px 0;
+}
+
+.remove-btn{
+    background:#000;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.remove-btn:hover{
+    background:#ff9800;
+}
+
+.cart-summary{
+    width:350px;
+    margin:40px auto;
+    padding:25px;
+    background:white;
+    border-radius:10px;
+    box-shadow:0 3px 15px #ccc;
+}
+
+.cart-summary h2{
+    margin-bottom:20px;
+    text-align:center;
+}
+
+.cart-summary p{
+    margin:12px 0;
+    font-size:18px;
+}
+
+.checkout-btn{
+    width:100%;
+    padding:12px;
+    margin-top:20px;
+    background:#ff9800;
+    color:white;
+    border:none;
+    cursor:pointer;
+    font-size:17px;
+    transition:0.3s;
+}
+
+.checkout-btn:hover{
+    background:#000;
+}
+
+.empty-cart{
+    text-align:center;
+    background:white;
+    padding:40px;
+    border-radius:10px;
+    box-shadow:0 3px 15px #ccc;
+    font-size:22px;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- Header -->
+<header class="navbar">
+
+    <div class="logo">
+        SHOPMART
+    </div>
+
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+            <li><a href="Cart.html">Cart</a></li>
+            <li><a href="Login.html">Login</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+
+<section class="cart">
+
+    <h1>Your Shopping Cart</h1>
+
+    <div id="cart-items">
+
+        <!-- Products will appear here -->
+
+    </div>
+
+    <div class="cart-summary">
+
+        <h2>Order Summary</h2>
+
+        <p>Total Items:
+            <span id="total-items">0</span>
+        </p>
+
+        <p>Total Price:
+            ₹<span id="total-price">0</span>
+        </p>
+
+        <button class="checkout-btn" onclick="location.href='checkout.html'">
+    Proceed to Checkout
+</button>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <div class="footer-container">
+
+        <div class="footer-section">
+            <h3>SHOPMART</h3>
+            <p>Your one-stop destination for quality products at affordable prices.</p>
+        </div>
+
+        <div class="footer-section">
+
+            <h3>Quick Links</h3>
+
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+
+        </div>
+
+        <div class="footer-section">
+
+            <h3>Contact</h3>
+
+            <p>Email: support@shopmart.com</p>
+            <p>Phone: +91 98765 43210</p>
+            <p>Kolkata, India</p>
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p class="copyright">
+        &copy; 2026 ShopMart. All Rights Reserved.
+    </p>
+
+</footer>
+
+<script src="cart.js"></script>
+
+</body>
+</html>

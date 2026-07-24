@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | SHOPMART</title>
+
+    <link rel="stylesheet" href="style.css">
+
+
+    <style>
+
+        /* Login Page Styling */
+
+        .login-section{
+
+            min-height:70vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            padding:50px 20px;
+
+        }
+
+
+        .login-box{
+
+            width:420px;
+            background:white;
+
+            padding:40px;
+
+            border-radius:12px;
+
+            box-shadow:0 5px 20px rgba(0,0,0,0.2);
+
+        }
+
+
+        .login-box h1{
+
+            text-align:center;
+            margin-bottom:10px;
+
+        }
+
+
+        .login-box .welcome{
+
+            text-align:center;
+            color:gray;
+            margin-bottom:30px;
+
+        }
+
+
+        .input-group{
+
+            margin-bottom:20px;
+
+        }
+
+
+        .input-group label{
+
+            display:block;
+            font-weight:bold;
+            margin-bottom:8px;
+
+        }
+
+
+        .input-group input{
+
+            width:100%;
+
+            padding:12px;
+
+            border:1px solid #ccc;
+
+            border-radius:6px;
+
+            font-size:16px;
+
+        }
+
+
+
+        .login-options{
+
+            display:flex;
+
+            justify-content:space-between;
+
+            margin-bottom:25px;
+
+            font-size:14px;
+
+        }
+
+
+
+        .login-options a{
+
+            text-decoration:none;
+
+            color:black;
+
+        }
+
+
+
+        .login-btn{
+
+            width:100%;
+
+            padding:13px;
+
+            background:black;
+
+            color:white;
+
+            border:none;
+
+            border-radius:6px;
+
+            font-size:18px;
+
+            cursor:pointer;
+
+        }
+
+
+
+        .login-btn:hover{
+
+            background:#333;
+
+        }
+
+
+
+        .signup-link{
+
+            text-align:center;
+
+            margin-top:25px;
+
+        }
+
+
+
+        .signup-link a{
+
+            color:black;
+
+            font-weight:bold;
+
+            text-decoration:none;
+
+        }
+
+
+    </style>
+
+
+</head>
+
+
+<body>
+
+
+
+<!-- SAME HEADER AS INDEX.HTML -->
+
+<header class="navbar">
+
+    <div class="logo">
+        SHOPMART
+    </div>
+
+
+    <nav>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="About.html">About</a>
+            </li>
+
+            <li>
+                <a href="Contact.html">Contact</a>
+            </li>
+
+            <li>
+                <a href="Cart.html">Cart</a>
+            </li>
+
+            <li>
+                <a href="login.html">Login</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+</header>
+
+
+
+
+
+<!-- LOGIN FORM -->
+
+
+<section class="login-section">
+
+
+<div class="login-box">
+
+
+<h1>
+Welcome Back
+</h1>
+
+
+<p class="welcome">
+Login to continue shopping with SHOPMART
+</p>
+
+
+
+<form id="loginForm">
+
+
+<div class="input-group">
+
+<label>
+Email Address
+</label>
+
+<input type="email"
+id="email"
+placeholder="Enter your email"
+required>
+
+</div>
+
+
+
+
+<div class="input-group">
+
+<label>
+Password
+</label>
+
+<input type="password"
+id="password"
+placeholder="Enter your password"
+required>
+
+</div>
+
+
+
+
+
+<div class="login-options">
+
+
+<label>
+
+<input type="checkbox">
+
+Remember me
+
+</label>
+
+
+<a href="forgot-password.html">
+Forgot Password?
+</a>
+
+
+</div>
+
+
+
+
+<button type="submit" class="login-btn">
+Login
+</button>
+
+
+
+</form>
+
+
+
+
+<div class="signup-link">
+
+<p>
+
+Don't have an account?
+
+<a href="signup.html">
+Create Account
+</a>
+
+</p>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<!-- SAME FOOTER AS INDEX.HTML -->
+
+
+<footer>
+
+
+<div class="footer-container">
+
+
+<div class="footer-section">
+
+<h3>
+SHOPMART
+</h3>
+
+<p>
+Your one-stop destination for quality products at affordable prices.
+</p>
+
+</div>
+
+
+
+
+<div class="footer-section">
+
+<h3>
+Quick Links
+</h3>
+
+
+<ul>
+
+<li>
+<a href="index.html">
+Home
+</a>
+</li>
+
+
+<li>
+<a href="Products.html">
+Products
+</a>
+</li>
+
+
+<li>
+<a href="About.html">
+About
+</a>
+</li>
+
+
+<li>
+<a href="Contact.html">
+Contact
+</a>
+</li>
+
+
+</ul>
+
+
+</div>
+
+
+
+
+
+<div class="footer-section">
+
+<h3>
+Contact
+</h3>
+
+
+<p>
+Email: support@shopmart.com
+</p>
+
+
+<p>
+Phone: +91 98765 43210
+</p>
+
+
+<p>
+Kolkata, India
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+
+<hr>
+
+
+<p class="copyright">
+
+&copy; 2026 ShopMart. All Rights Reserved.
+
+</p>
+
+
+
+</footer>
+
+<script src="login.js"></script>
+
+
+</body>
+
+</html>
