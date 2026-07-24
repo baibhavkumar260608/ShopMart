@@ -1,241 +1,482 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHOPMART - Cart</title>
 
-    <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:Arial, Helvetica, sans-serif;
-        }
+<title>About | SHOPMART</title>
 
-        body{
-            background:#f5f5f5;
-        }
+<link rel="stylesheet" href="style.css">
 
-        /* Header */
-        .navbar{
-            background:#000;
-            color:white;
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            padding:18px 50px;
-        }
 
-        .logo{
-            font-size:28px;
-            font-weight:bold;
-            letter-spacing:2px;
-        }
+<style>
 
-        .nav-links{
-            list-style:none;
-            display:flex;
-            gap:35px;
-        }
+.about-section{
 
-        .nav-links a{
-            color:white;
-            text-decoration:none;
-            font-size:18px;
-        }
+    padding:60px 20px;
 
-        .nav-links a:hover{
-            color:#ffcc00;
-        }
+}
 
-        /* Cart */
 
-        .cart{
-            width:85%;
-            margin:50px auto;
-        }
+.about-container{
 
-        .cart h1{
-            text-align:center;
-            margin-bottom:40px;
-        }
+    max-width:1100px;
 
-        .cart-item{
-            display:flex;
-            align-items:center;
-            background:white;
-            padding:20px;
-            margin-bottom:20px;
-            border-radius:10px;
-            box-shadow:0 3px 10px rgba(0,0,0,0.2);
-        }
+    margin:auto;
 
-        .cart-item img{
-            width:120px;
-            height:120px;
-            object-fit:cover;
-            border-radius:10px;
-        }
+}
 
-        .cart-details{
-            flex:1;
-            margin-left:30px;
-        }
 
-        .cart-details h3{
-            margin-bottom:10px;
-        }
 
-        .cart-details p{
-            margin:8px 0;
-        }
+.about-container h1{
 
-        .remove-btn{
-            background:#d32f2f;
-            color:white;
-            border:none;
-            padding:10px 20px;
-            border-radius:5px;
-            cursor:pointer;
-        }
+    text-align:center;
 
-        .remove-btn:hover{
-            background:#b71c1c;
-        }
+    font-size:40px;
 
-        /* Summary */
+    margin-bottom:20px;
 
-        .summary{
-            width:350px;
-            margin-left:auto;
-            background:white;
-            padding:25px;
-            border-radius:10px;
-            box-shadow:0 3px 10px rgba(0,0,0,0.2);
-        }
+}
 
-        .summary h2{
-            margin-bottom:20px;
-        }
 
-        .summary p{
-            margin:15px 0;
-            font-size:18px;
-        }
 
-        .checkout{
-            width:100%;
-            padding:15px;
-            background:#ff9900;
-            color:white;
-            border:none;
-            font-size:18px;
-            border-radius:5px;
-            cursor:pointer;
-        }
+.about-container .intro{
 
-        .checkout:hover{
-            background:#e68a00;
-        }
+    text-align:center;
 
-        /* Footer */
+    font-size:18px;
 
-        footer{
-            background:#222;
-            color:white;
-            margin-top:50px;
-            padding:40px;
-            text-align:center;
-        }
+    color:#555;
 
-    </style>
+    line-height:1.7;
+
+    margin-bottom:50px;
+
+}
+
+
+
+
+.about-cards{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:25px;
+
+    flex-wrap:wrap;
+
+}
+
+
+
+.about-card{
+
+    flex:1;
+
+    min-width:280px;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:12px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,0.15);
+
+    text-align:center;
+
+}
+
+
+
+.about-card h2{
+
+    margin-bottom:15px;
+
+}
+
+
+
+.about-card p{
+
+    color:#666;
+
+    line-height:1.6;
+
+}
+
+
+
+
+.mission{
+
+    margin-top:50px;
+
+    background:#f5f5f5;
+
+    padding:35px;
+
+    border-radius:12px;
+
+}
+
+
+
+.mission h2{
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.mission p{
+
+    text-align:center;
+
+    color:#555;
+
+    line-height:1.8;
+
+}
+
+
+
+@media(max-width:700px){
+
+.about-cards{
+
+    flex-direction:column;
+
+}
+
+}
+
+
+</style>
+
 
 </head>
+
+
 <body>
 
-<header class="navbar">
-    <div class="logo">SHOPMART</div>
 
-    <nav>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="About.html">About</a></li>
-            <li><a href="Contact.html">Contact</a></li>
-            <li><a href="Cart.html">Cart</a></li>
-            <li><a href="Login.html">Login</a></li>
-        </ul>
-    </nav>
+<!-- HEADER -->
+
+<header class="navbar">
+
+
+<div class="logo">
+
+SHOPMART
+
+</div>
+
+
+
+<nav>
+
+<ul class="nav-links">
+
+
+<li>
+<a href="index.html">
+Home
+</a>
+</li>
+
+
+<li>
+<a href="About.html">
+About
+</a>
+</li>
+
+
+<li>
+<a href="Contact.html">
+Contact
+</a>
+</li>
+
+
+<li>
+<a href="Cart.html">
+Cart
+</a>
+</li>
+
+
+<li>
+<a href="login.html">
+Login
+</a>
+</li>
+
+
+</ul>
+
+</nav>
+
+
 </header>
 
-<section class="cart">
 
-    <h1>Your Shopping Cart</h1>
 
-    <div class="cart-item">
-        <img src="images/HpPavilionLaptop.avif" alt="Laptop">
 
-        <div class="cart-details">
-            <h3>HP Pavilion Laptop</h3>
-            <p>Price: ₹55,999</p>
-            <p>Quantity: 1</p>
-        </div>
 
-        <button class="remove-btn">Remove</button>
-    </div>
+<!-- ABOUT CONTENT -->
 
-    <div class="cart-item">
-        <img src="images/download.jpg" alt="Shoes">
 
-        <div class="cart-details">
-            <h3>Nike Running Shoes</h3>
-            <p>Price: ₹4,999</p>
-            <p>Quantity: 1</p>
-        </div>
+<section class="about-section">
 
-        <button class="remove-btn">Remove</button>
-    </div>
 
-    <div class="cart-item">
-        <img src="images/wire.webp" alt="Headphones">
+<div class="about-container">
 
-        <div class="cart-details">
-            <h3>Wireless Headphones</h3>
-            <p>Price: ₹1,999</p>
-            <p>Quantity: 2</p>
-        </div>
 
-        <button class="remove-btn">Remove</button>
-    </div>
+<h1>
+About SHOPMART
+</h1>
 
-    <div class="summary">
-        <h2>Order Summary</h2>
 
-        <p>Items: 4</p>
-        <p><strong>Total: ₹64,996</strong></p>
 
-        <button class="checkout">Proceed to Checkout</button>
-    </div>
+<p class="intro">
+
+SHOPMART is a modern e-commerce platform designed to provide customers
+with a simple, secure, and convenient online shopping experience.
+From electronics and fashion to home appliances and beauty products,
+SHOPMART brings everything you need together in one place.
+
+</p>
+
+
+
+
+<div class="about-cards">
+
+
+
+<div class="about-card">
+
+<h2>
+Our Vision
+</h2>
+
+<p>
+
+To create a trusted online marketplace where customers can easily
+discover quality products at affordable prices with a smooth shopping
+experience.
+
+</p>
+
+</div>
+
+
+
+
+
+<div class="about-card">
+
+<h2>
+Our Mission
+</h2>
+
+<p>
+
+Our mission is to make online shopping faster, easier, and more reliable
+by offering a wide range of products with secure payments and excellent
+customer service.
+
+</p>
+
+</div>
+
+
+
+
+
+<div class="about-card">
+
+<h2>
+Why Choose Us?
+</h2>
+
+<p>
+
+✔ Wide range of products<br>
+✔ Secure payment options<br>
+✔ User-friendly interface<br>
+✔ Fast and convenient shopping
+
+</p>
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+<div class="mission">
+
+
+<h2>
+Shopping Made Simple
+</h2>
+
+
+<p>
+
+At SHOPMART, we believe technology should make everyday shopping easier.
+Our platform combines modern design, secure transactions, and a seamless
+checkout process to deliver a better shopping experience.
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
 
 </section>
 
+
+
+
+
+
+
+<!-- FOOTER -->
+
+
 <footer>
 
-    <h2>SHOPMART</h2>
 
-    <p>Your one-stop destination for quality products.</p>
+<div class="footer-container">
 
-    <br>
 
-    <p>Email: support@shopmart.com</p>
-    <p>Phone: +91 98765 43210</p>
 
-    <br>
+<div class="footer-section">
 
-    <p>&copy; 2026 ShopMart. All Rights Reserved.</p>
+<h3>
+SHOPMART
+</h3>
+
+<p>
+Your one-stop destination for quality products at affordable prices.
+</p>
+
+</div>
+
+
+
+
+<div class="footer-section">
+
+<h3>
+Quick Links
+</h3>
+
+
+<ul>
+
+<li>
+<a href="index.html">
+Home
+</a>
+</li>
+
+
+<li>
+<a href="Products.html">
+Products
+</a>
+</li>
+
+
+<li>
+<a href="About.html">
+About
+</a>
+</li>
+
+
+<li>
+<a href="Contact.html">
+Contact
+</a>
+</li>
+
+
+</ul>
+
+
+</div>
+
+
+
+
+
+<div class="footer-section">
+
+<h3>
+Contact
+</h3>
+
+
+<p>
+Email: support@shopmart.com
+</p>
+
+
+<p>
+Phone: +91 98765 43210
+</p>
+
+
+<p>
+Kolkata, India
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+
+<hr>
+
+
+<p class="copyright">
+
+&copy; 2026 ShopMart. All Rights Reserved.
+
+</p>
+
+
 
 </footer>
 
+
+
 </body>
+
 </html>
