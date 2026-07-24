@@ -20,8 +20,11 @@ const razorpay = new Razorpay({
 });
 
 
-app.use(cors());
+app.use(cors({
 
+origin:"https://shop-mart-theta-lac.vercel.app/"
+
+}));
 app.use(express.json());
 
 
