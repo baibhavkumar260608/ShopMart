@@ -1,272 +1,299 @@
+const express = require("express");
+const bcrypt = require("bcrypt");
+const cors = require("cors");
 const Razorpay = require("razorpay");
 
-const express=require("express");
+const db = require("./database");
 
-const bcrypt=require("bcrypt");
-
-const cors=require("cors");
-
-const db=require("./database");
+const app = express();
 
 
-const app=express();
-
-const razorpay = new Razorpay({
-
-    key_id:"rzp_test_THObgqGiG7P0ny",
-
-    key_secret:"Sd5pGAM4GXRQPOIK1Uq4Q24B"
-
-});
-
+// Middleware
 
 app.use(cors({
-
-origin:"https://shop-mart-theta-lac.vercel.app"
-
+    origin: "https://shop-mart-theta-lac.vercel.app"
 }));
+
 app.use(express.json());
 
 
 
+// Razorpay
+
+const razorpay = new Razorpay({
+
+    key_id: process.env.RAZORPAY_KEY_ID,
+
+    key_secret: process.env.RAZORPAY_KEY_SECRET
+
+});
+
+
+
+// =======================
 // SIGNUP API
+// =======================
 
-app.post("/signup",(req,res)=>{
+app.post("/signup", async (req,res)=>{
 
-
-let {
-fullname,
-email,
-password,
-phone
-}=req.body;
-
-
-
-bcrypt.hash(password,10,(err,hash)=>{
+    const {
+        fullname,
+        email,
+        password,
+        phone
+    } = req.body;
 
 
-let sql=
-"INSERT INTO users(fullname,email,password,phone) VALUES(?,?,?,?)";
+    if(!fullname || !email || !password || !phone)
+    {
+        return res.json({
+            message:"All fields are required"
+        });
+    }
 
 
-db.query(sql,
-[
-fullname,
-email,
-hash,
-phone
-],
-(err,result)=>{
+    try
+    {
+
+        // Check existing email
+
+        db.query(
+            "SELECT * FROM users WHERE email=?",
+            [email],
+            async(err,result)=>{
 
 
-if(err)
-{
-return res.json({
-message:"Email already exists"
+                if(err)
+                {
+                    console.log("SELECT ERROR:",err);
+
+                    return res.json({
+                        message:"Database error"
+                    });
+                }
+
+
+                if(result.length > 0)
+                {
+                    return res.json({
+                        message:"Email already exists"
+                    });
+                }
+
+
+
+                // Hash password
+
+                let hash = await bcrypt.hash(password,10);
+
+
+
+                // Insert user
+
+                db.query(
+
+                    "INSERT INTO users(fullname,email,password,phone) VALUES(?,?,?,?)",
+
+                    [
+                        fullname,
+                        email,
+                        hash,
+                        phone
+                    ],
+
+                    (err,result)=>{
+
+
+                        if(err)
+                        {
+                            console.log("INSERT ERROR:",err);
+
+                            return res.json({
+                                message:err.message
+                            });
+                        }
+
+
+                        res.json({
+                            message:"Account created successfully"
+                        });
+
+
+                    }
+
+                );
+
+
+            }
+        );
+
+
+    }
+    catch(error)
+    {
+        console.log(error);
+
+        res.json({
+            message:"Server error"
+        });
+    }
+
+
 });
-}
-
-
-
-res.json({
-message:"Account created successfully"
-});
-
-
-});
-
-
-});
-
-
-});
 
 
 
 
-
+// =======================
 // LOGIN API
+// =======================
+
 
 app.post("/login",(req,res)=>{
 
 
-let {
-email,
-password
-}=req.body;
+    const {
+        email,
+        password
+    } = req.body;
 
 
 
-db.query(
+    db.query(
 
-"SELECT * FROM users WHERE email=?",
+        "SELECT * FROM users WHERE email=?",
 
-[email],
+        [email],
 
-(err,result)=>{
+        (err,result)=>{
 
 
-if(result.length===0)
-{
+            if(err)
+            {
+                console.log(err);
 
-return res.json({
-message:"User not found"
+                return res.json({
+                    message:"Database error"
+                });
+            }
+
+
+
+            if(result.length===0)
+            {
+                return res.json({
+                    message:"User not found"
+                });
+            }
+
+
+
+            let user=result[0];
+
+
+
+            bcrypt.compare(
+
+                password,
+
+                user.password,
+
+                (err,match)=>{
+
+
+                    if(match)
+                    {
+                        res.json({
+
+                            message:"Login successful",
+
+                            user:user.fullname
+
+                        });
+                    }
+
+                    else
+                    {
+                        res.json({
+
+                            message:"Wrong password"
+
+                        });
+                    }
+
+
+                }
+
+            );
+
+
+        }
+
+    );
+
+
 });
 
-}
 
 
 
-let user=result[0];
-
-
-
-bcrypt.compare(
-
-password,
-
-user.password,
-
-(err,match)=>{
-
-
-if(match)
-{
-
-res.json({
-
-message:"Login successful",
-
-user:user.fullname
-
-});
-
-
-}
-
-else
-{
-
-res.json({
-
-message:"Wrong password"
-
-});
-
-}
-
-
-});
-
-
-});
-
-
-});
-
-
-
-
+// =======================
 // CREATE RAZORPAY ORDER
+// =======================
+
 
 app.post("/create-order", async(req,res)=>{
 
 
-try{
+    try
+    {
 
 
-let options={
+        let options={
 
-    amount:req.body.amount * 100,
+            amount:req.body.amount * 100,
 
-    currency:"INR",
+            currency:"INR",
 
-    receipt:"shopmart_order_"+Date.now()
+            receipt:"shopmart_"+Date.now()
 
-};
-
-
-
-let order = await razorpay.orders.create(options);
+        };
 
 
-
-res.json(order);
-
+        let order = await razorpay.orders.create(options);
 
 
-}
-
-catch(error){
+        res.json(order);
 
 
-console.log(error);
+    }
+    catch(error)
+    {
+
+        console.log(error);
 
 
-res.status(500).json({
+        res.status(500).json({
 
-message:"Payment order creation failed",
+            message:"Payment order creation failed"
 
-error:error.message
+        });
 
-});
-
-
-}
-
-
-});
-app.listen(5000,()=>{
-
-console.log("Server running on port 5000");
-
-});
-
-app.post("/create-order", async(req,res)=>{
-
-
-try{
-
-
-let options={
-
-amount:req.body.amount*100,
-
-currency:"INR",
-
-receipt:"shopmart_"+Date.now()
-
-};
-
-
-let order=await razorpay.orders.create(options);
-
-
-res.json(order);
-
-
-}
-
-catch(error){
-
-console.log(error);
-
-res.status(500).json({
-
-message:error.message
-
-});
-
-}
+    }
 
 
 });
 
 
 
-app.listen(5000,()=>{
 
-console.log("Server running on port 5000");
+// SERVER START
+
+const PORT = process.env.PORT || 5000;
+
+
+app.listen(PORT,()=>{
+
+    console.log(`Server running on port ${PORT}`);
 
 });
