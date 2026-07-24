@@ -61,7 +61,7 @@ if(amount == 0)
 
 let response =
 await fetch(
-"http://localhost:5000/create-order",
+"https://shopmart-api.onrender.com/create-order",
 {
 
 method:"POST",
