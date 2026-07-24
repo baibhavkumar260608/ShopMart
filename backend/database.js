@@ -11,7 +11,13 @@ const connection = mysql.createConnection({
 
     database: process.env.MYSQL_DATABASE,
 
-    port: process.env.MYSQL_PORT
+    port: Number(process.env.MYSQL_PORT),
+
+    ssl: {
+        rejectUnauthorized: false
+    },
+
+    connectTimeout: 30000
 
 });
 
@@ -23,7 +29,6 @@ connection.connect((err)=>{
         console.log("Database connection failed");
         console.log(err);
     }
-
     else
     {
         console.log("Database Connected");
