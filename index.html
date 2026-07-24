@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOPMART</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="navbar">
+        <div class="logo">
+            SHOPMART
+        </div>
+
+        <nav>
+            <ul class="nav-links"> 
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li>
+    <a href="Cart.html">
+        Cart (<span id="cart-count">0</span>)
+    </a>
+</li>
+                <li><a href = "login.html"> Login</a></li> 
+            </ul>
+        </nav>
+    </header>
+
+    
+
+    <!-- Hero Section -->
+<section class="hero">
+    <h1>Welcome to SHOPMART</h1>
+    <p>Everything you need, delivered to your doorstep</p>
+    <button>Shop Now</button>
+</section>
+
+
+<!-- Categories Section -->
+<section class="categories">
+
+    <h2>Categories</h2>
+
+    <div class="category-container">
+
+        <div class="category-card">
+            <h3>Electronics</h3>
+            <p>Mobiles, Laptops, Gadgets</p>
+        </div>
+
+        <div class="category-card">
+            <h3>Fashion</h3>
+            <p>Clothing, Shoes, Accessories</p>
+        </div>
+
+        <div class="category-card">
+            <h3>Home & Kitchen</h3>
+            <p>Furniture, Appliances, Decor</p>
+        </div>
+
+        <div class="category-card">
+            <h3>Beauty</h3>
+            <p>Skincare, Makeup, Personal Care</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Products Section -->
+<section class="products">
+
+<h2>Featured Products</h2>
+
+<div class="product-container">
+
+
+<!-- Product 1 -->
+<div class="product-card" id="hp-laptop">
+
+    <img src="images/HpPavilionLaptop.avif" alt="Laptop">
+
+    <h3>HP Pavilion Laptop</h3>
+
+    <p class="category">Electronics</p>
+
+    <p class="rating">★★★★★</p>
+
+    <h3>₹55,999</h3>
+
+    <div id="hp-laptop-controls"
+    data-id="hp-laptop"
+data-name="HP Pavilion Laptop"
+data-price="55999"
+data-image="images/HpPavilionLaptop.avif">
+
+    <button onclick="addToCart(
+    'hp-laptop',
+    'HP Pavilion Laptop',
+    55999,
+    'images/HpPavilionLaptop.avif'
+    )">
+        Add to Cart
+    </button>
+
+</div>
+
+</div>
+
+
+
+<!-- Product 2 -->
+<div class="product-card" id="samsung-phone">
+
+    <img src="images/Samsung_galaxy_phone.webp" alt="Phone">
+
+    <h3>Samsung Galaxy Smartphone</h3>
+
+    <p class="category">Electronics</p>
+
+    <p class="rating">★★★★☆</p>
+
+    <h3>₹29,999</h3>
+
+    <div id="samsung-phone-controls"
+    data-id="samsung-phone"
+data-name="Samsung Galaxy Smartphone"
+data-price="29999"
+data-image="images/Samsung_galaxy_phone.webp">
+
+    <button onclick="addToCart(
+    'samsung-phone',
+    'Samsung Galaxy Smartphone',
+    29999,
+    'images/Samsung_galaxy_phone.webp'
+    )">
+        Add to Cart
+    </button>
+
+</div>
+
+</div>
+
+
+
+<!-- Product 3 -->
+<div class="product-card" id="nike-shoes">
+
+    <img src="images/download.jpg" alt="Shoes">
+
+    <h3>Nike Running Shoes</h3>
+
+    <p class="category">Fashion</p>
+
+    <p class="rating">★★★★★</p>
+
+    <h3>₹4,999</h3>
+
+    <div id="nike-shoes-controls"
+    data-id="nike-shoes"
+data-name="Nike Running Shoes"
+data-price="4999"
+data-image="images/download.jpg">
+
+    <button onclick="addToCart(
+    'nike-shoes',
+    'Nike Running Shoes',
+    4999,
+    'images/download.jpg'
+    )">
+        Add to Cart
+    </button>
+
+</div>
+
+</div>
+
+
+
+<!-- Product 4 -->
+<div class="product-card" id="fitness-watch">
+
+    <img src="images/smartfitnesswatch.avif" alt="Watch">
+
+    <h3>Smart Fitness Watch</h3>
+
+    <p class="category">Accessories</p>
+
+    <p class="rating">★★★★☆</p>
+
+    <h3>₹2,499</h3>
+
+    <div id="fitness-watch-controls"
+    data-id="fitness-watch"
+data-name="Smart Fitness Watch"
+data-price="2499"
+data-image="images/smartfitnesswatch.avif">
+
+    <button onclick="addToCart(
+    'fitness-watch',
+    'Smart Fitness Watch',
+    2499,
+    'images/smartfitnesswatch.avif'
+    )">
+        Add to Cart
+    </button>
+
+</div>
+
+</div>
+
+
+
+<!-- Product 5 -->
+<div class="product-card" id="office-chair">
+
+    <img src="images/modernofficechair.jpg" alt="Chair">
+
+    <h3>Modern Office Chair</h3>
+
+    <p class="category">Home Furniture</p>
+
+    <p class="rating">★★★★☆</p>
+
+    <h3>₹6,999</h3>
+
+    <div id="office-chair-controls"
+    data-id="office-chair"
+data-name="Modern Office Chair"
+data-price="6999"
+data-image="images/modernofficechair.jpg">
+
+    <button onclick="addToCart(
+    'office-chair',
+    'Modern Office Chair',
+    6999,
+    'images/modernofficechair.jpg'
+    )">
+        Add to Cart
+    </button>
+
+</div>
+
+</div>
+
+
+
+<!-- Product 6 -->
+<div class="product-card" id="wireless-headphones">
+
+    <img src="images/wire.webp" alt="Headphones">
+
+    <h3>Wireless Headphones</h3>
+
+    <p class="category">Electronics</p>
+
+    <p class="rating">★★★★★</p>
+
+    <h3>₹1,999</h3>
+
+    <div id="wireless-headphones-controls"
+    data-id="wireless-headphones"
+data-name="Wireless Headphones"
+data-price="1999"
+data-image="images/wire.webp">
+
+    <button onclick="addToCart(
+    'wireless-headphones',
+    'Wireless Headphones',
+    1999,
+    'images/wire.webp'
+    )">
+        Add to Cart
+    </button>
+
+</div>
+
+</div>
+
+<!-- Product 7 -->
+<div class="product-card" id="washing-machine">
+
+    <img src="images/washingmachine.webp" alt="Washing Machine">
+
+    <h3>LG Fully Automatic Washing Machine</h3>
+
+    <p class="category">Home Appliances</p>
+
+    <p class="rating">★★★★★</p>
+
+    <h3>₹32,999</h3>
+
+    <div id="washing-machine-controls"
+    data-id="washing-machine"
+data-name="LG Fully Automatic Washing Machine"
+data-price="32999"
+data-image="images/washingmachine.webp">
+
+    <button onclick="addToCart(
+    'washing-machine',
+    'LG Fully Automatic Washing Machine',
+    32999,
+    'images/washingmachine.webp'
+    )">
+        Add to Cart
+    </button>
+
+</div>
+
+</div>
+
+
+<!-- Product 8 -->
+<div class="product-card" id="refrigerator">
+
+    <img src="images/refrigerator.webp" alt="Refrigerator">
+
+    <h3>Samsung Double Door Refrigerator</h3>
+
+    <p class="category">Home Appliances</p>
+
+    <p class="rating">★★★★☆</p>
+
+    <h3>₹45,999</h3>
+
+    <div id="refrigerator-controls"
+    data-id="refrigerator"
+data-name="Samsung Double Door Refrigerator"
+data-price="45999"
+data-image="images/refrigerator.webp">
+
+    <button onclick="addToCart(
+    'refrigerator',
+    'Samsung Double Door Refrigerator',
+    45999,
+    'images/refrigerator.webp'
+    )">
+        Add to Cart
+    </button>
+
+</div>
+
+</div>
+
+
+<!-- Product 9 -->
+<div class="product-card" id="microwave-oven">
+
+    <img src="images/microwave.webp" alt="Microwave Oven">
+
+    <h3>Bajaj Microwave Oven</h3>
+
+    <p class="category">Kitchen Appliances</p>
+
+    <p class="rating">★★★★☆</p>
+
+    <h3>₹8,499</h3>
+
+    <div id="microwave-oven-controls"
+    data-id="microwave-oven"
+data-name="Bajaj Microwave Oven"
+data-price="8499"
+data-image="images/microwave.webp">
+
+    <button onclick="addToCart(
+    'microwave-oven',
+    'Bajaj Microwave Oven',
+    8499,
+    'images/microwave.webp'
+    )">
+        Add to Cart
+    </button>
+
+</div>
+
+</div>
+
+
+<!-- Product 10 -->
+<div class="product-card" id="split-ac">
+
+    <img src="images/airconditionng.webp" alt="Air Conditioner">
+
+    <h3>Voltas 1.5 Ton Split AC</h3>
+
+    <p class="category">Home Appliances</p>
+
+    <p class="rating">★★★★★</p>
+
+    <h3>₹36,999</h3>
+
+   <div id="split-ac-controls"
+   data-id="split-ac"
+data-name="Voltas 1.5 Ton Split AC"
+data-price="36999"
+data-image="images/airconditionng.webp">
+
+    <button onclick="addToCart(
+    'split-ac',
+    'Voltas 1.5 Ton Split AC',
+    36999,
+    'images/airconditionng.webp'
+    )">
+        Add to Cart
+    </button>
+
+</div>
+
+</div>
+
+
+
+<!-- Beauty Products Section -->
+
+
+<!-- Product 11 -->
+<div class="product-card" id="face-cream">
+
+    <img src="images/shopping.webp" alt="Face Cream">
+
+    <h3>GlowCare Vitamin C Face Cream</h3>
+
+    <p class="category">Beauty & Skincare</p>
+
+    <p class="rating">★★★★★</p>
+
+    <h3>₹599</h3>
+
+    <div id="face-cream-controls"
+    data-id="face-cream"
+data-name="GlowCare Vitamin C Face Cream"
+data-price="599"
+data-image="images/shopping.webp">
+
+    <button onclick="addToCart(
+    'face-cream',
+    'GlowCare Vitamin C Face Cream',
+    599,
+    'images/shopping.webp'
+    )">
+        Add to Cart
+    </button>
+
+</div>
+
+</div>
+
+
+<!-- Product 12 -->
+<div class="product-card" id="mens-perfume">
+
+    <img src="images/perfume.webp" alt="Perfume">
+
+    <h3>Luxury Men's Perfume</h3>
+
+    <p class="category">Beauty & Fragrance</p>
+
+    <p class="rating">★★★★☆</p>
+
+    <h3>₹1,299</h3>
+
+    <div id="mens-perfume-controls"
+    data-id="mens-perfume"
+data-name="Luxury Men's Perfume"
+data-price="1299"
+data-image="images/perfume.webp">
+
+    <button onclick="addToCart(
+    'mens-perfume',
+    'Luxury Men\'s Perfume',
+    1299,
+    'images/perfume.webp'
+    )">
+        Add to Cart
+    </button>
+
+</div>
+
+</div>
+
+
+<!-- Product 13 -->
+<div class="product-card" id="makeup-kit">
+
+    <img src="images/shopping (1).webp" alt="Makeup Kit">
+
+    <h3>Professional Makeup Kit</h3>
+
+    <p class="category">Beauty & Cosmetics</p>
+
+    <p class="rating">★★★★★</p>
+
+    <h3>₹1,899</h3>
+
+    <div id="makeup-kit-controls"
+    data-id="makeup-kit"
+data-name="Professional Makeup Kit"
+data-price="1899"
+data-image="images/shopping (1).webp">
+
+    <button onclick="addToCart(
+    'makeup-kit',
+    'Professional Makeup Kit',
+    1899,
+    'images/shopping (1).webp'
+    )">
+        Add to Cart
+    </button>
+
+</div>
+
+</div>
+
+
+<!-- Product 14 -->
+<div class="product-card" id="hair-dryer">
+
+    <img src="images/hairdryer.webp" alt="Hair Dryer">
+
+    <h3>Philips Hair Dryer</h3>
+
+    <p class="category">Beauty Appliances</p>
+
+    <p class="rating">★★★★☆</p>
+
+    <h3>₹1,499</h3>
+
+    <div id="hair-dryer-controls"
+    data-id="hair-dryer"
+data-name="Philips Hair Dryer"
+data-price="1499"
+data-image="images/hairdryer.webp">
+
+    <button onclick="addToCart(
+    'hair-dryer',
+    'Philips Hair Dryer',
+    1499,
+    'images/hairdryer.webp'
+    )">
+        Add to Cart
+    </button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- Deals Section -->
+<section class="deals">
+
+<h2>Today's Deals</h2>
+
+<div class="deal-box">
+
+    <h3>🔥 Mega Sale</h3>
+
+    <p>
+        Get up to 50% off on electronics, fashion and home appliances.
+    </p>
+
+    <button>Explore Deals</button>
+
+</div>
+
+</section>
+
+<script src="cart.js"></script>
+</body>
+
+<footer>
+
+    <div class="footer-container">
+
+        <div class="footer-section">
+            <h3>SHOPMART</h3>
+            <p>Your one-stop destination for quality products at affordable prices.</p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Products.html">Products</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Contact</h3>
+            <p>Email: support@shopmart.com</p>
+            <p>Phone: +91 98765 43210</p>
+            <p>Kolkata, India</p>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p class="copyright">
+        &copy; 2026 ShopMart. All Rights Reserved.
+    </p>
+
+</footer>
+    
+
+</html>
