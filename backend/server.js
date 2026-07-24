@@ -65,10 +65,10 @@ app.post("/signup", async (req,res)=>{
 
                 if(err)
                 {
-                    console.log("SELECT ERROR:",err);
-
+                    console.log("MYSQL ERROR:", err);
+                
                     return res.json({
-                        message:"Database error"
+                        message: err.message
                     });
                 }
 
